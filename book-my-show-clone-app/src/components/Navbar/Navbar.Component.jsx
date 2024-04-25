@@ -7,8 +7,9 @@ function NavSm() {
       <div className="text-white flex items-center justify-between">
         <div>
           <h3 className="text-xl font-bold">It All Starts Here!!</h3>
-          <span className="text-gray-400 text-xs flex items-center cursor-pointer hover: text-white">
-            Bangalore <BiChevronDown />
+          <span className="text-gray-400 text-xs flex items-center cursor-pointer hover:text-white">
+            Bangalore
+            <BiChevronDown />
           </span>
         </div>
         <div className=" w-8 h-8">
@@ -27,6 +28,10 @@ function NavMd() {
         <img src="" alt="logo" className="w-full h-full" />
       </div>
       <div className="w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md">
+        <span className="text-gray-400 text-xs flex items-center cursor-pointer hover:text-white">
+          Bangalore
+          <BiChevronDown />
+        </span>
         <BiSearch />
         <input
           type="search"
@@ -54,6 +59,17 @@ function NavLg() {
             />
           </div>
         </div>
+        {/* <div className="flex items-center gap-3">
+          <span className="text-gray-200 text-base flex items-center cursor-pointer hover:text-white">
+            Delhi NCR <BiChevronDown />
+          </span>
+          <button className="bg-red-600 text-white px-2 py-1 text-sm rounded">
+            Sign In
+          </button>
+          <div className="w-8 h-8 text-white">
+            <BiMenu className="w-full h-full" />
+          </div>
+        </div> */}
       </div>
     </>
   );
@@ -63,19 +79,17 @@ function NavLg() {
 const Navbar = () => {
   return (
     <nav className="bg-darkBackground-700 px-4 py-3">
-      {/* Small Screen Navbar */}
-      {/* >= md its hidden, only visible on small screen size */}
+      {/* This is for Mobile Screen - NavBar */}
       <div className="md:hidden">
-        {/* <div className="sm:flex md:hidden lg:hidden" */}
         <NavSm />
       </div>
 
-      {/* Medium Screen Size */}
+      {/* This is for Medium/Tab Screen - NavBar */}
       <div className="hidden md:flex lg:hidden">
         <NavMd />
       </div>
 
-      {/* Large Screen Size */}
+      {/* This is for Large Screen - NavBar */}
       <div className="hidden md:hidden lg:flex">
         <NavLg />
       </div>

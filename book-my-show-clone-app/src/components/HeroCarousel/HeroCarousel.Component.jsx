@@ -3,7 +3,7 @@ import HeroSlider from "react-slick";
 import { NextArrow, PrevArrow } from "./Arrows.Components";
 
 const HeroCarousel = () => {
-  const [images] = useState([
+  const [images, setImages] = useState([
     {
       adult: false,
       backdrop_path: "/ugS5FVfCI3RV0ZwZtBV3HAV75OX.jpg",
@@ -45,9 +45,14 @@ const HeroCarousel = () => {
     slidesToShow: 1,
     infinite: true,
     speed: 500,
+    SlidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
   };
+
   const settings = {
     arrows: true,
     slidesToShow: 1,
@@ -55,34 +60,37 @@ const HeroCarousel = () => {
     speed: 500,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
   };
 
   return (
     <>
       <div className="lg:hidden">
         <HeroSlider {...settings}>
-          {images.map((image) => {
-            <div className="w-full h-56 md:h-80 py-3">
+          {images.map((images, index) => (
+            <div className="w-full h-56 md:h-80 py-3" key={index}>
               <img
                 src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`}
                 alt="Hero Banner"
                 className="w-full h-full rounded-md object-cover"
               />
-            </div>;
-          })}
+            </div>
+          ))}
         </HeroSlider>
       </div>
       <div className="hidden lg:block">
         <HeroSlider {...settingsLG}>
-          {images.map((image) => {
-            <div className="w-full h-96 px-2 py-3">
+          {images.map((images, index) => (
+            <div className="w-full h-96 px-2 py-3" key={index}>
               <img
-                src={`https://image.tmdb.org/t/ptoriginal$(images.backdrop_path}`}
+                src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`}
                 alt="Hero Banner"
                 className="w-full h-full rounded-md object-cover"
               />
-            </div>;
-          })}
+            </div>
+          ))}
         </HeroSlider>
       </div>
     </>

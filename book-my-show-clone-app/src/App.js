@@ -1,4 +1,5 @@
 import "./App.css";
+import axios from "axios";
 
 // Routers
 import { Routes, Route } from "react-router-dom";

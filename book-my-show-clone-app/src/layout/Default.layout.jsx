@@ -1,5 +1,5 @@
 // rafce shortcut
-import React from "react";
+import React, { Component } from "react";
 import Navbar from "../components/Navbar/Navbar.Component";
 
 const DefaultLayoutHoc =
